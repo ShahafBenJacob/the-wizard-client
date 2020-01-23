@@ -1,0 +1,44 @@
+@mixin perfect-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin perfect-center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+$colors: ("purpel": #4D0075,
+    "silver": #D6DBDF,
+    "yellow": #FCFF02,
+);
+
+$fonts: ("main-header": Kavoon,
+    "body": Baloo Da);
+
+.page-wrapper{
+    @include perfect-center();
+    margin: 40px 0;
+    button{
+        margin: 10px;
+        border-radius: 8px;
+        font-size: 20px;
+        padding: 10px;
+        font-family: map-get($fonts, "body");
+        background-color: map-get($colors, "silver");
+    }
+}
+
+
+.number{
+    font-size: 40px;
+    font-family: map-get($fonts, "main-header");
+    color: map-get($colors, "yellow"),
+}
+
+.number-display{
+    @include perfect-center-col()
+}
