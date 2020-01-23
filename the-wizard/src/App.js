@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
     <Switch>
-      <Route path="/onPlay" component={OnPlay}/>
+      <Route path="/onPlay/:id/:min/:max/:name" component={OnPlay}/>
       <Route path="/" component={GameSettings}/>
     </Switch>
   </Router>
