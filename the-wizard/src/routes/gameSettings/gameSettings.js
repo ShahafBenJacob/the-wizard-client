@@ -46,7 +46,6 @@ class GameSettings extends React.Component {
   };
 
   render() {
-    console.log(this.state.id);
     return (
       <div className={"page-wrapper"}>
         <h1>THE WIZARD</h1>
@@ -79,16 +78,21 @@ class GameSettings extends React.Component {
               />
             </form>
           </div>
-          <h2>
-            Now Think Of A Number <br />
-            And Our Wizard Will Tell You What It Is
-          </h2>
+          <div className={"title-wrapper"}>
+            <h2>Now Think Of A Number</h2>
+            <h2>And Our Wizard Will Tell You What It Is</h2>
+          </div>
         </div>
-        <h1>Ready?</h1>        
-          <button onClick={() => this.createNewGame()}>YES</button>
-          {this.state.id && <Redirect to={`/onPlay/${this.state.id}/${this.state.min}/${this.state.max}/${this.state.name}`}></Redirect>}
+        <h1>Ready?</h1>
+        <button onClick={() => this.createNewGame()}>YES</button>
+        {this.state.id ? (
+          <Redirect
+            to={`/onPlay/${this.state.id}/${this.state.min}/${this.state.max}/${this.state.name}`}
+          ></Redirect>
+        ) : (
+          <span></span>
+        )}
       </div>
-
     );
   }
 }
