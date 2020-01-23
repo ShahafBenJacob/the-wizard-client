@@ -1,0 +1,41 @@
+$colors: ("purpel": #4D0075,
+    "silver": #D6DBDF,
+    "yellow": #FCFF02,
+);
+
+$fonts: ("main-header": Kavoon,
+    "body": Baloo Da);
+
+@mixin perfect-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin perfect-center-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: map-get($fonts, "main-header");
+    color: map-get($colors, "yellow")
+}
+
+h2 {
+    font-family: map-get($fonts, "body");
+}
+
+body {
+    background-color: map-get($colors, "purpel");
+}
+
+.page-wrapper, .form-wrapper{
+    @include perfect-center-col()
+}
+
+.min-max-wrapper{
+    @include perfect-center()
+}
